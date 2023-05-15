@@ -188,3 +188,5 @@ Corke, P. (2017) Robotics, Vision & Control, Springer, ISBN 978-3-319-54413-7.
 Ivanov, I. (2021) Raspberry Pi 4 + Raspberry Pi Camera case, Sketchfab, retrieved from: https://sketchfab.com/3d-models/raspberry-pi-4-raspberry-pi-camera-case-7daba0cf330844b0aa425e5d85525436
 The MathWorks, Inc. (2023) Instalar productos con conexión a Internet, MathWorks, retrieved from: https://la.mathworks.com/help/install/ug/install-products-with-internet-connection.html
 Pimienta, A. (2023) Color Image Recognition with Kinematic Positioning and modular feed for MATLAB®, Github, retrieved from: https://github.com/Githubense/raspberryColorVision
+
+***PDF File has been included in the repo, containing the current markdown as the proposed deliverable
