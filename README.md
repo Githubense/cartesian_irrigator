@@ -39,7 +39,7 @@ Open up a terminal and start ROS using this command:
 
 	roscore
 	
-Once it has mounted the instance, open up a new terminal and run the launch command, this file contains all the necessary components:
+Once it has mounted the instance, open up a new terminal and run the launch command created to launch RViz, as well as the necessary nodes with the URDF callback integrated, this file contains all the necessary components:
 
 	roslaunch cartesian_irrigator display.launch
 	
