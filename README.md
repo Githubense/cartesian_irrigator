@@ -22,6 +22,7 @@ Download or clone contents of the ROS Folder to your designated Catkin Workspace
 
 Inside the cartesian_irrigator folder, the following folder structure should be included:
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/2307b8d7-9fe0-49d6-9e1d-e1f993eb2dbd)
+Figure. Folder Structure
 
 Once downloaded execute the following command:
 	
@@ -43,12 +44,14 @@ Once it has mounted thei instance, open up a new terminal and run the launch com
 	
 The previous command will launch a RViz instance with the URDF robot displayed, such as the following figure describes:
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/09ac6b54-975a-42be-9a42-fef443cde7d1)
+Figure. RViz
 
 In order to move the robot in a simulation environment, an instance of the joint_state_pusblisher GUI window is needed, to run it use this command in a new terminal, the following figure will appear afterwards:
 
 	rosrun joint_state_publisher_gui joint_state_publisher_gui
 	
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/a2f8159f-fb90-464d-8731-8bbaf84d8c4b)
+Figure. Joint State GUI
 
 With the included sliders, you can move the robot in the X, Y and Z axis, with the available constraints and limits made by the URDF file itself, the following figures demonstrate the simulation with the sliders.
 
@@ -64,6 +67,8 @@ Z Movement:
 ![z_mov](https://github.com/Githubense/cartesian_irrigator/assets/77215295/40dad505-3411-4594-a543-462f0089efb4)
 ![z_mov_joint](https://github.com/Githubense/cartesian_irrigator/assets/77215295/9199010d-630d-492d-8006-8023c0ead137)
 
+In order to use the robot in a real-life environment, connect to the node **robot_state_publisher** using your language of preference.
+
 ## Project Design
 
 ### Robot Design
@@ -71,6 +76,24 @@ The design of the high-scale cartesian robot for automatic irrigation with dimen
 
 The robot's size is a significant advantage, as it can cover a large area and perform its functions without requiring significant manual intervention. The robot's ability to navigate through fields and cover large distances makes it ideal for use in a variety of crop management applications. The robot's design was also intended to address the challenges associated with traditional irrigation methods. With the color recognition system, the robot can identify plants that need irrigation, reducing the need for water wastage and optimizing plant development. This functionality significantly reduces the cost of labor associated with manual irrigation and improves overall plant health.
 
+The size of the joints was measured based on the material for the implementations that being, a 1x1 inch Steel PTR, giving both structural integrity as well as low weight compared to more standarized PTR sizes. The following parts define the sizes described in the URDF:
+
+```xml
+<robot name="prismatic_cartesian_robot">
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="15 0 0"/>
+      <geometry>
+        <box size="30 0.025 0.025"/>
+      </geometry>
+    </visual>
+  </link>
+```
+
+To standarize, the proposed implementation uses the same PTR to save on costs and logistics, this size was used due to the fact of having around 1.3 to 1.46 kg of weigth per meter, focusing on lowest weight but incorporating industry standards such as Steel PTR, it was defined a 1x1 transversal PTR for the Y axis was optimal since the system should only really carry the y axis element with the x axis motor, with the proposed solution of a AZM98AC-HS100+AZD-A+CC005VZF motor capable of sustaining the load in a Rack-and-Pinion Drive Mechanism with 52 N per meter with a 90mm flange.The proposed load plus all the other motor falls around 16kg which at 10m it should need around 32N per meter having plenty enough for more applications.
+
+![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/4fbc841a-b81d-4a0b-8cdf-89ed92a1e041)
+Figure. AZ Series Motor
 ### Matlab Implementation
 
 ### Connection
