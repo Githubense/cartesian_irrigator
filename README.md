@@ -4,10 +4,8 @@
 This project involves the design and implementation of a high-scale cartesian robot using the Robot Operating System (ROS) and the Unified Robot Description Format (URDF) file. The robot has a size of 30x10x10 meters and is suitable for industrial applications that require high accuracy and precision.
 
 The robot's mechanical structure is defined in the URDF file, which includes the joint types, dimensions, and limits. The URDF file also defines the robot's visual and collision models, which are used for simulation and collision detection. The robot's kinematics and dynamics are modeled using the URDF-based robot description.The robot's control system is implemented using ROS, which provides a framework for developing and integrating software components.
-### Design Approach
-The design of the high-scale cartesian robot for automatic irrigation with dimensions of 30x10x10m was intended to provide a solution that facilitates the use of robotics in agriculture and botanics. With the increasing need for automation in the agriculture industry, the robot's design was tailored to provide a scalable solution that could be used in different applications.
+### Design
 
-The robot's size is a significant advantage, as it can cover a large area and perform its functions without requiring significant manual intervention. The robot's ability to navigate through fields and cover large distances makes it ideal for use in a variety of crop management applications. The robot's design was also intended to address the challenges associated with traditional irrigation methods. With the color recognition system, the robot can identify plants that need irrigation, reducing the need for water wastage and optimizing plant development. This functionality significantly reduces the cost of labor associated with manual irrigation and improves overall plant health.
 
 ## Quick Start Guide
 
@@ -70,6 +68,9 @@ Z Movement:
 ## Project Design
 
 ### Robot Design
+The design of the high-scale cartesian robot for automatic irrigation with dimensions of 30x10x10m was intended to provide a solution that facilitates the use of robotics in agriculture and botanics. With the increasing need for automation in the agriculture industry, the robot's design was tailored to provide a scalable solution that could be used in different applications.
+
+The robot's size is a significant advantage, as it can cover a large area and perform its functions without requiring significant manual intervention. The robot's ability to navigate through fields and cover large distances makes it ideal for use in a variety of crop management applications. The robot's design was also intended to address the challenges associated with traditional irrigation methods. With the color recognition system, the robot can identify plants that need irrigation, reducing the need for water wastage and optimizing plant development. This functionality significantly reduces the cost of labor associated with manual irrigation and improves overall plant health.
 
 ### Matlab Implementation
 
