@@ -1,7 +1,7 @@
-# High Scale Cartesian Robot for automatic irrigation using URDF and ROS
+# Large Scale Cartesian Robot for automatic irrigation using URDF and ROS
 
 ## Overview
-This project involves the design and implementation of a high-scale cartesian robot using the Robot Operating System (ROS) and the Unified Robot Description Format (URDF) file. The robot has a size of 30x10x10 meters and is suitable for industrial applications that require high accuracy and precision.
+This project involves the design and implementation of a high-scale cartesian robot using the Robot Operating System (ROS) and the Unified Robot Description Format (URDF) file. The robot has a size of 30x10x10 meters and is suitable for industrial applications that require large distances.
 
 The robot's mechanical structure is defined in the URDF file, which includes the joint types, dimensions, and limits. The URDF file also defines the robot's visual and collision models, which are used for simulation and collision detection. The robot's kinematics and dynamics are modeled using the URDF-based robot description.The robot's control system is implemented using ROS, which provides a framework for developing and integrating software components.
 
@@ -22,6 +22,7 @@ Download or clone contents of the ROS Folder to your designated Catkin Workspace
 
 Inside the cartesian_irrigator folder, the following folder structure should be included:
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/2307b8d7-9fe0-49d6-9e1d-e1f993eb2dbd)
+
 Figure. Folder Structure
 
 Once downloaded execute the following command:
@@ -44,6 +45,7 @@ Once it has mounted thei instance, open up a new terminal and run the launch com
 	
 The previous command will launch a RViz instance with the URDF robot displayed, such as the following figure describes:
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/09ac6b54-975a-42be-9a42-fef443cde7d1)
+
 Figure. RViz
 
 In order to move the robot in a simulation environment, an instance of the joint_state_pusblisher GUI window is needed, to run it use this command in a new terminal, the following figure will appear afterwards:
@@ -51,6 +53,7 @@ In order to move the robot in a simulation environment, an instance of the joint
 	rosrun joint_state_publisher_gui joint_state_publisher_gui
 	
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/a2f8159f-fb90-464d-8731-8bbaf84d8c4b)
+
 Figure. Joint State GUI
 
 With the included sliders, you can move the robot in the X, Y and Z axis, with the available constraints and limits made by the URDF file itself, the following figures demonstrate the simulation with the sliders.
@@ -90,12 +93,18 @@ The size of the joints was measured based on the material for the implementation
   </link>
 ```
 
-To standarize, the proposed implementation uses the same PTR to save on costs and logistics, this size was used due to the fact of having around 1.3 to 1.46 kg of weigth per meter, focusing on lowest weight but incorporating industry standards such as Steel PTR, it was defined a 1x1 transversal PTR for the Y axis was optimal since the system should only really carry the y axis element with the x axis motor, with the proposed solution of a AZM98AC-HS100+AZD-A+CC005VZF motor capable of sustaining the load in a Rack-and-Pinion Drive Mechanism with 52 N per meter with a 90mm flange.The proposed load plus all the other motor falls around 16kg which at 10m it should need around 32N per meter having plenty enough for more applications.
+To standarize, the proposed implementation uses the same PTR to save on costs and logistics, this size was used due to the fact of having around 1.3 to 1.46 kg of weigth per meter, focusing on lowest weight but incorporating industry standards such as Steel PTR, it was defined a 1x1 transversal PTR for the Y axis was optimal since the system should only really carry the y axis element with the x axis motor, with the proposed solution of a AZM98AC-HS100+AZD-A+CC005VZF motor capable of sustaining the load in a Rack-and-Pinion Drive Mechanism with 52 N per meter with a 90mm flange.The proposed load plus all the other motor falls around 16kg which at 10m it should need around 32N per meter having plenty enough for more applications or Addons.
 
 ![image](https://github.com/Githubense/cartesian_irrigator/assets/77215295/4fbc841a-b81d-4a0b-8cdf-89ed92a1e041)
+
 Figure. AZ Series Motor
+
 ### Matlab Implementation
+For the proposed solution, the color recognition algorithm was constructed in MATLAB, which recognizes a color label used to determine the plant used and the necessary components needed, i this case irrigation, the recognition saves the centroid of the element and returns the position from Home that the label aquires. For more information, visit the following repo:
+
+https://github.com/Githubense/raspberryColorVision
 
 ### Connection
+The proposed solution is composed of three major elements, the MATLAB Code, the ROS files, and the connection between those environments. Utilizing the ROS Toolbox, the MATLAB code can convert the x,y,z data from the image sensor to x,y,z positions in the world, from that the robot can comunicate through the robot_state_publisher and the joint_state_publisher in order to calculate the movements needed to reach that location and have it saved. The ROS part of the project has already implemented the use of those nodes, so the implmentation not only with the MATLAB code but with any interface for ROS can utilized the present repo in order to modify it for new applications. The MATLAB code with ROS integration automatically handles the nodes as well as the remote connection to the ROS controller.
 
 ## References
