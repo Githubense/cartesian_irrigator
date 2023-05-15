@@ -4,7 +4,6 @@
 This project involves the design and implementation of a high-scale cartesian robot using the Robot Operating System (ROS) and the Unified Robot Description Format (URDF) file. The robot has a size of 30x10x10 meters and is suitable for industrial applications that require high accuracy and precision.
 
 The robot's mechanical structure is defined in the URDF file, which includes the joint types, dimensions, and limits. The URDF file also defines the robot's visual and collision models, which are used for simulation and collision detection. The robot's kinematics and dynamics are modeled using the URDF-based robot description.The robot's control system is implemented using ROS, which provides a framework for developing and integrating software components.
-### Design
 
 
 ## Quick Start Guide
