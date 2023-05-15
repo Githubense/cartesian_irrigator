@@ -173,7 +173,7 @@ The following code was contructed to define the robot constraints and limits, as
 </robot>
 ```
 
-The important parts to note about this code is that is a 3 joint cartesian robot, so each joint is based of two links in a prismatic type of implementation, defined by the joint type called "prismatic". Another part to emphasize is the visual elements, elements which in a real life immplementation wouldnt be considered for the transformations.
+The important parts to note about this code is that is a 3 joint cartesian robot, so each joint is based of two links in a prismatic type of implementation, defined by the joint type called "prismatic". Another part to emphasize is the visual elements, elements which in a real life implementation wouldnt be considered for the transformations. The robot uses offsets for their elements since the sliding elements for the rack would take space and the robot would collide, soi the calculated workspace of the proposed solutions falls onto a 29.5x9.5x10m space. 
 
 ### Matlab Implementation
 For the proposed solution, the colour recognition algorithm was constructed in MATLAB, which recognizes a colour label used to determine the plant used and the necessary components needed, in this case, irrigation, the recognition saves the centroid of the element and returns the position from Home that the label acquires. For more information, visit the following repo:
